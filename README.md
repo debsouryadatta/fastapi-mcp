@@ -14,6 +14,7 @@ This API provides several endpoints to access Pokemon data:
 - **Regional Pokemon**: Get Pokemon from specific regions (Kanto, Johto, etc.)
 - **Top Regional Pokemon**: Get the top Pokemon from each region
 
+
 ## Installation
 
 1. Clone the repository
