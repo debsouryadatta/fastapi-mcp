@@ -3,12 +3,15 @@ import httpx
 from typing import List, Optional
 import asyncio
 from pydantic import BaseModel
+from fastapi_mcp import FastApiMCP
 
 app = FastAPI(
     title="Pokemon API",
     description="A fun API for Pokemon enthusiasts",
     version="1.0.0"
 )
+mcp = FastApiMCP(app)
+mcp.mount()
 
 # Base URL for the PokeAPI
 POKEAPI_BASE_URL = "https://pokeapi.co/api/v2"
@@ -354,6 +357,7 @@ async def get_pokemon(name_or_id: str):
         raise HTTPException(status_code=404, detail=f"Pokemon {name_or_id} not found")
     return pokemon
 
+mcp.setup_server()
 
 
 
